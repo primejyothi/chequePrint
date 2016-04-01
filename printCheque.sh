@@ -163,7 +163,7 @@ done
 
 # Input args validations
 
-if [ ! -z "$pFile" -a ! -r "$pFile" ]
+if [ -z "$pFile" -o ! -r "$pFile" ]
 then
 	err $LINENO "Unable to read input profile file $pFile, exiting."
 	exit 2
